@@ -8,13 +8,6 @@ import Routes from './routes';
 const App = (): Node => (
   <BrowserRouter>
     <Routes />
-    {/*<Container>*/}
-    {/*<Header title="Секундомер" />*/}
-    {/*<Wrapper>*/}
-    {/*<Stopwatch />*/}
-    {/*</Wrapper>*/}
-    {/**/}
-    {/*</Container>*/}
   </BrowserRouter>
 );
 
