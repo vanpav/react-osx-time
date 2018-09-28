@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { pure } from 'recompose';
-import Button from 'components/Button';
+import Button from 'src/components/Button';
 
 type Props = {
   isInitial: boolean,
