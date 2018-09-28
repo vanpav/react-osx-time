@@ -5,10 +5,20 @@ import BottomNav from '../BottomNav';
 import Header from '../Header';
 import { Container, Content } from './styles';
 
-const getCurrentSection = (sections: Array<Object> = [], pathname: string) =>
-  sections.find(tab => tab.path === pathname) || {};
+const getCurrentSection = (
+  sections: Array<Object> = [],
+  pathname: string
+): Object => sections.find(tab => tab.path === pathname) || {};
 
-const Layout = ({ sections, children, location: { pathname } }) => {
+type Props = {
+  sections: Array<{}>,
+  children?: any,
+  location: {
+    pathname: string,
+  },
+};
+
+const Layout = ({ sections, children, location: { pathname } }: Props) => {
   return (
     <Container>
       <Header title={getCurrentSection(sections, pathname).title} />

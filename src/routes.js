@@ -1,4 +1,5 @@
-import React from 'react';
+// @flow
+import React, { type Node } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Layout from './components/Layout';
@@ -20,7 +21,7 @@ const sections = [
   },
 ];
 
-const Routes = () => {
+const Routes = (): Node => {
   return (
     <Layout sections={sections}>
       <Switch>

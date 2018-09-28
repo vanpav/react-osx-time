@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Laps from './components/Laps';
 import Counter from './components/Counter';
 import Controls from './components/Controls';
@@ -26,7 +27,7 @@ const initialState = {
   },
 };
 
-class Stopwatch extends Component<{}, State> {
+class Stopwatch extends Component<{ time: number }, State> {
   state = initialState;
 
   raf: AnimationFrameID;
@@ -37,12 +38,6 @@ class Stopwatch extends Component<{}, State> {
       time: time + tick,
     }));
   };
-
-  componentDidMount() {
-    if (this.state.running) {
-      this.handleStart();
-    }
-  }
 
   componentWillUnmount() {
     cancelAnimationFrame(this.raf);
@@ -103,7 +98,8 @@ class Stopwatch extends Component<{}, State> {
   };
 
   render() {
-    const { time, running, laps, stored } = this.state;
+    const { running, laps, stored } = this.state;
+    const { time } = this.props;
     const currentLap = time - (this.storedLaps || 0);
     const isInitial = time === initialState.time && !running;
     return (
@@ -133,4 +129,10 @@ class Stopwatch extends Component<{}, State> {
   }
 }
 
-export default Stopwatch;
+const mapProps = ({ stopwatch }) => {
+  return {
+    time: stopwatch.time,
+  };
+};
+
+export default connect(mapProps)(Stopwatch);
