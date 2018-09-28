@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { pure } from 'recompose';
 import Button from 'src/components/Button';
+import trans from 'src/translations';
 
 type Props = {
   isInitial: boolean,
@@ -31,18 +32,18 @@ const Controls = ({
   <Wrapper>
     {running ? (
       <React.Fragment>
-        <Button onClick={onAddLap}>Круг</Button>
+        <Button onClick={onAddLap}>{trans('lap')}</Button>
         <Button onClick={onStop} variant="red">
-          Стоп
+          {trans('stop')}
         </Button>
       </React.Fragment>
     ) : (
       <React.Fragment>
         <Button onClick={onReset} disabled={isInitial}>
-          {isInitial ? 'Круг' : 'Сброс'}
+          {isInitial ? trans('lap') : trans('reset')}
         </Button>
         <Button onClick={onStart} variant="green">
-          Старт
+          {trans('start')}
         </Button>
       </React.Fragment>
     )}

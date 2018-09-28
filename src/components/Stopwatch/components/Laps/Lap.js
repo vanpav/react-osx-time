@@ -3,6 +3,7 @@ import React from 'react';
 import { pure } from 'recompose';
 import { formatTimeString } from '../../utils';
 import { Item, ItemTime, ItemTitle } from './styles';
+import trans from 'src/translations';
 
 type Props = {
   lap: number,
@@ -12,7 +13,9 @@ type Props = {
 
 const Lap = ({ lap, lapID, quality }: Props) => (
   <Item>
-    <ItemTitle>Круг {lapID}</ItemTitle>
+    <ItemTitle>
+      {trans('lap')} {lapID}
+    </ItemTitle>
     <ItemTime best={quality === 1} worst={quality === -1}>
       {formatTimeString(lap)}
     </ItemTime>

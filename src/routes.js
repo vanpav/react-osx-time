@@ -5,18 +5,19 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Layout from './components/Layout';
 import Stopwatch from 'src/components/Stopwatch';
 import Timer from 'src/components/Timer';
+import trans from 'src/translations';
 
 const sections = [
   {
     path: '/stopwatch',
     icon: 'stopwatch',
-    title: 'Секундомер',
+    title: trans('stopwatch'),
     component: Stopwatch,
   },
   {
     path: '/timer',
     icon: 'timer',
-    title: 'Таймер',
+    title: trans('timer'),
     component: Timer,
   },
 ];
