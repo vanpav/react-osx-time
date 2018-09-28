@@ -1,10 +1,10 @@
 // @flow
 import React, { type Node } from 'react';
+import { pure } from 'recompose';
 import styled from 'styled-components';
-import { formatTimeString } from '../../utils';
 
 type Props = {
-  time: number,
+  timeString: number,
 };
 
 const Wrapper = styled.div`
@@ -20,8 +20,8 @@ const Wrapper = styled.div`
   font-weight: 100;
 `;
 
-const Timer = ({ time }: Props): Node => (
-  <Wrapper>{formatTimeString(time)}</Wrapper>
+const Counter = ({ timeString }: Props): Node => (
+  <Wrapper>{timeString}</Wrapper>
 );
 
-export default Timer;
+export default pure(Counter);

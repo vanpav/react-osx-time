@@ -1,9 +1,10 @@
 // @flow
 import React, { Component } from 'react';
 import Laps from './components/Laps';
-import Timer from './components/Timer';
+import Counter from './components/Counter';
 import Controls from './components/Controls';
 import { Container, Wrapper, Scrollable } from './styles';
+import { formatTimeString } from './utils';
 
 type State = {
   time: number,
@@ -41,6 +42,10 @@ class Stopwatch extends Component<{}, State> {
     if (this.state.running) {
       this.handleStart();
     }
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf);
   }
 
   handleStart = () => {
@@ -104,7 +109,7 @@ class Stopwatch extends Component<{}, State> {
     return (
       <Container>
         <Wrapper>
-          <Timer time={time} />
+          <Counter timeString={formatTimeString(time)} />
           <Controls
             isInitial={isInitial}
             running={running}

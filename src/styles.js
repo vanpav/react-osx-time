@@ -1,16 +1,4 @@
-import styled, { injectGlobal } from 'styled-components';
-
-export const Container = styled.div`
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-`;
-
-export const Wrapper = styled.div`
-  flex: 1 1 auto;
-  overflow-y: auto;
-  height: 100%;
-`;
+import { injectGlobal } from 'styled-components';
 
 injectGlobal`
   * {

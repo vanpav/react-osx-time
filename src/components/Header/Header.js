@@ -1,4 +1,6 @@
-import React from 'react';
+// @flow
+import React, { type Node } from 'react';
+import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -15,10 +17,14 @@ const Title = styled.div`
   font-size: 16px;
 `;
 
-const Header = ({ title }) => (
+type Props = {
+  title?: string,
+};
+
+const Header = ({ title }: Props): Node => (
   <Container>
     <Title>{title}</Title>
   </Container>
 );
 
-export default Header;
+export default withRouter(Header);

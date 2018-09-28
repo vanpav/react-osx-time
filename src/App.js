@@ -1,18 +1,21 @@
 // @flow
 import React, { type Node } from 'react';
-import { Container, Wrapper } from './styles';
-import Header from './components/Header';
-import BottomNav from './components/BottomNav';
-import Stopwatch from './components/Stopwatch';
+import { BrowserRouter } from 'react-router-dom';
+
+import './styles';
+import Routes from './routes';
 
 const App = (): Node => (
-  <Container>
-    <Header title="Секундомер" />
-    <Wrapper>
-      <Stopwatch />
-    </Wrapper>
-    <BottomNav />
-  </Container>
+  <BrowserRouter>
+    <Routes />
+    {/*<Container>*/}
+    {/*<Header title="Секундомер" />*/}
+    {/*<Wrapper>*/}
+    {/*<Stopwatch />*/}
+    {/*</Wrapper>*/}
+    {/**/}
+    {/*</Container>*/}
+  </BrowserRouter>
 );
 
 export default App;

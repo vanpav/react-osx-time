@@ -1,6 +1,6 @@
 ### OSX Stopwatch & Timer
 
-React & Styled Components
+React & React Router & Styled Components
 
 ```
   yarn start / npm start
