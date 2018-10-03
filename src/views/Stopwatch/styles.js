@@ -6,14 +6,14 @@ export const Container = styled.div`
   height: 100%;
 `;
 
-export const Wrapper = styled.div`
+export const DisplayWrapper = styled.div`
   flex: 0 0 55vh;
   padding: 0 12px;
   display: flex;
   flex-direction: column;
 `;
 
-export const Scrollable = styled.div`
+export const LapsWrapper = styled.div`
   padding: 0 12px;
   flex: 1 1 calc(100% - 55vh);
   overflow: auto;

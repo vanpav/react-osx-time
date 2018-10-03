@@ -15,6 +15,7 @@ const getColor = (variant, alpha) => {
 };
 
 const StyledButton = styled.button`
+  padding: 0;
   outline: none;
   width: 72px;
   height: 72px;

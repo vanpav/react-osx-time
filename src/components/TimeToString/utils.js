@@ -5,7 +5,7 @@ const addLeadZero = (time: number, length: number = 2): string =>
 
 export const formatTimeString = (
   milliseconds: number,
-  withMilisecons: boolean = true
+  withMiliseconds: boolean = true
 ): string => {
   const hours = Math.floor(milliseconds / (60 * 60 * 1000));
   let time = milliseconds % (60 * 60 * 1000);
@@ -16,5 +16,5 @@ export const formatTimeString = (
   const timeString = `${
     hours > 0 ? `${addLeadZero(hours, Infinity)}:` : ''
   }${minutes}:${seconds}`;
-  return withMilisecons ? `${timeString},${ms}` : timeString;
+  return withMiliseconds ? `${timeString},${ms}` : timeString;
 };

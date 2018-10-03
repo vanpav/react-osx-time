@@ -1,11 +1,20 @@
 // @flow
 import React, { type Node } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import Loadable from 'react-loadable';
 
 import Layout from './components/Layout';
-import Stopwatch from 'src/components/Stopwatch';
-import Timer from 'src/components/Timer';
 import trans from 'src/translations';
+
+const Stopwatch = Loadable({
+  loader: () => import('src/views/Stopwatch'),
+  loading: () => null,
+});
+
+const Timer = Loadable({
+  loader: () => import('src/views/Timer'),
+  loading: () => null,
+});
 
 const sections = [
   {

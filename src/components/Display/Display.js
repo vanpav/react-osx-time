@@ -1,13 +1,8 @@
 // @flow
-import React, { type Node } from 'react';
-import { pure } from 'recompose';
+import React from 'react';
 import styled from 'styled-components';
 
-type Props = {
-  timeString: number,
-};
-
-const Wrapper = styled.div`
+const DisplayContainer = styled.div`
   display: flex;
   flex: 0 1 100%;
   justify-content: center;
@@ -16,12 +11,11 @@ const Wrapper = styled.div`
   //font-size: 18.5vw;  // HOURS
   //font-size: 16.7vw; // 3 hours symbols
   //font-size: 14.9vw; // 4hours symbols
-  font-variant-numeric: tabular-nums;
   font-weight: 100;
 `;
 
-const Counter = ({ timeString }: Props): Node => (
-  <Wrapper>{timeString}</Wrapper>
+const Display = ({ children }: { children: any }) => (
+  <DisplayContainer>{children}</DisplayContainer>
 );
 
-export default pure(Counter);
+export default Display;
